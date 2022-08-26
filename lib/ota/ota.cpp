@@ -1,5 +1,4 @@
 #include <ota.h>
-#include "config.h"
 
 void setupOta() {
 Serial.println("Configuring OTA ...");

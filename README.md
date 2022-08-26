@@ -23,11 +23,7 @@ GND    -> GND
 ## Building and usage
 The app is based on PlatformIO and is build through PlatformIO's toolchain.
 
-Parameters:
- - HOSTNAME                    in lib/ota/ota.h
- - CLIENT_IP/CLIENT_PORT       in include/config.h
- - wiring for CC1101           in include/config.h
- - wiring for ESP32 ethernet   in lib/ethernet/ethernet.h
+Confiruration is in file include/config.h
 
 ## Related materials:
 - CC1101: https://www.ti.com/product/CC1101

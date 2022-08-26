@@ -1,4 +1,3 @@
-#include "config.h"
 #include "utils.h"
 #include "rf_mbus.h"
 #include "mbus_packet.h"
