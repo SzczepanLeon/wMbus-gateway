@@ -19,8 +19,6 @@ GDO2   -> D14
 VCC    -> 3V3
 GND    -> GND
 ```
-More details about wiring in library this tool is using for connecting with CC1101: https://github.com/LSatan/SmartRC-CC1101-Driver-Lib
-
 
 ## Building and usage
 The app is based on PlatformIO and is build through PlatformIO's toolchain.
