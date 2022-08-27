@@ -23,7 +23,7 @@ GND    -> GND
 ## Building and usage
 The app is based on PlatformIO and is build through PlatformIO's toolchain.
 
-Confiruration is in file [include/config.h](include/config.h)
+Confiruration is in file [include/config.hpp](include/config.hpp)
 
 ## Related materials:
 - CC1101: https://www.ti.com/product/CC1101
