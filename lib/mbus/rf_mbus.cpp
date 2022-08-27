@@ -1,8 +1,8 @@
-#include "utils.h"
-#include "rf_mbus.h"
-#include "mbus_packet.h"
-#include "3outof6.h"
-#include "tmode_rf_settings.h"
+#include "utils.hpp"
+#include "rf_mbus.hpp"
+#include "mbus_packet.hpp"
+#include "3outof6.hpp"
+#include "tmode_rf_settings.hpp"
 
 #include <ELECHOUSE_CC1101_SRC_DRV.h>
 

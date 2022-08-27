@@ -1,26 +1,24 @@
 /***********************************************************************************
-    Filename: mbus_paket.h
+    Filename: crc.hpp
 ***********************************************************************************/
 
-#ifndef _MBUS_PACKET_H
-#define _MBUS_PACKET_H
+#ifndef _CRC_H
+#define _CRC_H
 
 #include <stdint.h>
+#include <cstring>
 
 //----------------------------------------------------------------------------------
 //  Constants 
 //----------------------------------------------------------------------------------
-#define PACKET_OK              0
-#define PACKET_CODING_ERROR    1
-#define PACKET_CRC_ERROR       2
+#define CRC_POLYNOM         0x3D65
 
 
 //----------------------------------------------------------------------------------
 //  Function declarations
 //----------------------------------------------------------------------------------
-uint16_t packetSize(uint8_t lField);
-uint16_t byteSize(uint16_t packetSize);
-uint16_t decodeRXBytesTmode(uint8_t* pByte, uint8_t* pPacket, uint16_t packetSize);
+uint16_t crcCalc(uint16_t crcReg, uint8_t crcData); 
+uint8_t crcRemove(uint8_t *data, uint8_t dataLen);
 
 #endif
 

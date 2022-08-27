@@ -1,24 +1,24 @@
 /***********************************************************************************
-    Filename: crc.h
+    Filename: 3outof6.hpp
 ***********************************************************************************/
 
-#ifndef _CRC_H
-#define _CRC_H
+#ifndef _3OUTOF6_H
+#define _3OUTOF6_H
 
 #include <stdint.h>
-#include <cstring>
 
 //----------------------------------------------------------------------------------
-//  Constants 
+// Constants
 //----------------------------------------------------------------------------------
-#define CRC_POLYNOM         0x3D65
+#define DECODING_3OUTOF6_OK      0
+#define DECODING_3OUTOF6_ERROR   1
 
 
 //----------------------------------------------------------------------------------
-//  Function declarations
+// Function declarations
 //----------------------------------------------------------------------------------
-uint16_t crcCalc(uint16_t crcReg, uint8_t crcData); 
-uint8_t crcRemove(uint8_t *data, uint8_t dataLen);
+void encode3outof6 (uint8_t *uncodedData, uint8_t *encodedData, uint8_t lastByte);
+uint8_t decode3outof6(uint8_t *encodedData, uint8_t *decodedData, uint8_t lastByte);
 
 #endif
 

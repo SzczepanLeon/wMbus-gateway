@@ -1,24 +1,26 @@
 /***********************************************************************************
-    Filename: 3outof6.h
+    Filename: mbus_paket.hpp
 ***********************************************************************************/
 
-#ifndef _3OUTOF6_H
-#define _3OUTOF6_H
+#ifndef _MBUS_PACKET_H
+#define _MBUS_PACKET_H
 
 #include <stdint.h>
 
 //----------------------------------------------------------------------------------
-// Constants
+//  Constants 
 //----------------------------------------------------------------------------------
-#define DECODING_3OUTOF6_OK      0
-#define DECODING_3OUTOF6_ERROR   1
+#define PACKET_OK              0
+#define PACKET_CODING_ERROR    1
+#define PACKET_CRC_ERROR       2
 
 
 //----------------------------------------------------------------------------------
-// Function declarations
+//  Function declarations
 //----------------------------------------------------------------------------------
-void encode3outof6 (uint8_t *uncodedData, uint8_t *encodedData, uint8_t lastByte);
-uint8_t decode3outof6(uint8_t *encodedData, uint8_t *decodedData, uint8_t lastByte);
+uint16_t packetSize(uint8_t lField);
+uint16_t byteSize(uint16_t packetSize);
+uint16_t decodeRXBytesTmode(uint8_t* pByte, uint8_t* pPacket, uint16_t packetSize);
 
 #endif
 

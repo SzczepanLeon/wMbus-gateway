@@ -3,7 +3,7 @@ It is very simple wMbus to ethernet gateway.
 Mbus telegram is without CRC i.e. can be used by wmbusmeters as device=stdin
 
 ## Required components
-- ESP32 with ethernet (WT32-ETH01, Olimex ESP32-POE, etc.)
+- ESP32 with ethernet: [WT32-ETH01](http://www.wireless-tag.com/portfolio/wt32-eth01/), [Olimex ESP32-POE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/), etc.
 - CC1101 module (868MHz)
 
 ## Wiring
@@ -23,7 +23,7 @@ GND    -> GND
 ## Building and usage
 The app is based on PlatformIO and is build through PlatformIO's toolchain.
 
-Confiruration is in file include/config.h
+Confiruration is in file [include/config.h](include/config.h)
 
 ## Related materials:
 - CC1101: https://www.ti.com/product/CC1101

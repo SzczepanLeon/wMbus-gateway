@@ -4,10 +4,10 @@
 
 #include <stdint.h>
 
-#include "3outof6.h"
-#include "crc.h"
-#include "mbus_packet.h"
-#include "mbus_defs.h"
+#include "3outof6.hpp"
+#include "crc.hpp"
+#include "mbus_packet.hpp"
+#include "mbus_defs.hpp"
 
 
 //----------------------------------------------------------------------------------

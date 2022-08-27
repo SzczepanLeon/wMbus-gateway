@@ -1,16 +1,16 @@
 #include <Arduino.h>
-#include "config.h"
-#include "ota.h"
+#include "config.hpp"
+#include "ota.hpp"
 
 #include <esp_task_wdt.h>
 #define WDT_TIMEOUT 100
 
 #include <string>
-#include "ethernet.h"
-#include "rf_mbus.h"
-#include "crc.h"
-#include "mbus_packet.h"
-#include "utils.h"
+#include "ethernet.hpp"
+#include "rf_mbus.hpp"
+#include "crc.hpp"
+#include "mbus_packet.hpp"
+#include "utils.hpp"
 
 uint8_t MBpacket[291];
 
