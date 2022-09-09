@@ -53,6 +53,10 @@ void rf_mbus_init() {
   pinMode(GDO2, INPUT);
   ELECHOUSE_cc1101.setSpiPin(SPI_SCK, SPI_MISO, SPI_MOSI, SPI_SS);
 
+  ELECHOUSE_cc1101.Reset();
+  ELECHOUSE_cc1101.setSres();
+  Serial.println("CC1101 manual reset done");
+
   if (ELECHOUSE_cc1101.getCC1101()) {
     Serial.println("CC1101 connection OK");
   } else {
