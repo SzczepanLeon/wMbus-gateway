@@ -77,20 +77,28 @@ void setup() {
 
 void loop() {
   ArduinoOTA.handle();
+  int rssi = 0;
 
-  if (rf_mbus_task(MBpacket)) {
+  if (rf_mbus_task(MBpacket, rssi)) {
     esp_task_wdt_reset();
     uint8_t lenWithoutCrc = crcRemove(MBpacket, packetSize(MBpacket[0]));
     Serial.print(" T: ");
     dumpHex(MBpacket, lenWithoutCrc);
 
     if (eth_connected) {
-      if (client.connect(CLIENT_IP, CLIENT_PORT)) {
+      // hex format
+      if (client.connect(CLIENT_HEX_IP, CLIENT_HEX_PORT)) {
         client.write((const uint8_t *) MBpacket, lenWithoutCrc);
         client.stop();
       }
-      else {
-        Serial.println("      ETH connection failed!");
+      // rtlwmbus format
+      if (client.connect(CLIENT_RTLWMBUS_IP, CLIENT_RTLWMBUS_PORT)) {
+        client.printf("T1;1;1;;%d;;;0x", rssi);
+        for (int i = 0; i < lenWithoutCrc; i++){
+          client.printf("%02X", MBpacket[i]);
+        }
+        client.print("\n");
+        client.stop();
       }
     }
     memset(MBpacket, 0, sizeof(MBpacket));

@@ -60,6 +60,6 @@ typedef struct RXinfoDescr {
 //----------------------------------------------------------------------------------
 uint8_t rf_mbus_on(bool force = true);
 void rf_mbus_init(void);
-bool rf_mbus_task(uint8_t* MBpacket);
+bool rf_mbus_task(uint8_t* MBpacket, int &rssi);
 
 #endif

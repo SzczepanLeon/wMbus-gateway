@@ -73,7 +73,7 @@ void rf_mbus_init() {
   delay(4);
 }
 
-bool rf_mbus_task(uint8_t* MBpacket) {
+bool rf_mbus_task(uint8_t* MBpacket, int &rssi) {
   uint8_t bytesDecoded[2];
 
   switch (RXinfo.state) {
@@ -153,6 +153,7 @@ bool rf_mbus_task(uint8_t* MBpacket) {
 
     if (rxStatus == PACKET_OK) {
       RXinfo.complete = true;
+      rssi = ELECHOUSE_cc1101.getRssi();
     }
     RXinfo.state = 0;
     return RXinfo.complete;
