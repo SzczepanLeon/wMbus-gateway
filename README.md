@@ -7,18 +7,7 @@ Mbus telegram is without CRC i.e. can be used by wmbusmeters as device=stdin
 - CC1101 module (868MHz)
 
 ## Wiring
-```
-CC1101 -> ESP32
-=================
-SCK    -> D12
-MISO   -> D4
-MOSI   -> D15
-SS     -> D2
-GDO0   -> D35
-GDO2   -> D14
-VCC    -> 3V3
-GND    -> GND
-```
+Please check confiruration file [include/config.hpp](include/config.hpp)
 
 ## Building and usage
 The app is based on PlatformIO and is build through PlatformIO's toolchain.
