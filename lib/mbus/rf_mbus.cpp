@@ -144,7 +144,7 @@ bool rf_mbus_task(uint8_t* MBpacket, int &rssi) {
 
   uint8_t overfl = ELECHOUSE_cc1101.SpiReadStatus(CC1101_RXBYTES) & 0x80;
   // END OF PAKET
-  if ((!overfl) && (!digitalRead(GDO0)) && (RXinfo.state > 1)) {
+  if ((!overfl) && (!digitalRead(GDO2)) && (RXinfo.state > 1)) {
     ELECHOUSE_cc1101.SpiReadBurstReg(CC1101_RXFIFO, RXinfo.pByteIndex, (uint8_t)RXinfo.bytesLeft);
 
     // decode!

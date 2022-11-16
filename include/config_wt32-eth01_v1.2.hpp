@@ -1,16 +1,16 @@
 /***********************************************************************************
-    Filename: config.hpp
+    Filename: config_wt32-eth01_v1.2.hpp
 ***********************************************************************************/
 
-#ifndef _MY_CONFIG_WT32_ETH01_H
-#define _MY_CONFIG_WT32_ETH01_H
+#ifndef _MY_CONFIG_WT32_ETH01_V12_H
+#define _MY_CONFIG_WT32_ETH01_V12_H
 
 //----------------------------------------------------------------------------------
 //  Constants 
 //----------------------------------------------------------------------------------
 //CC1101 config
-#define GDO0            35
-#define GDO2            14
+#define GDO0            14
+#define GDO2            35
 
 #define SPI_SCK         12
 #define SPI_MISO        4
