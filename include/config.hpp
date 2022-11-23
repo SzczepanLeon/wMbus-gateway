@@ -15,7 +15,7 @@
 #define CLIENT_HEX_PORT          2404
 
 #define CLIENT_RTLWMBUS_IP       "10.0.0.27"
-#define CLIENT_RTLWMBUS_PORT     2406
+#define CLIENT_RTLWMBUS_PORT     8118
 
 // OTA + ETH config
 #define MY_HOSTNAME     "wMbus-GW"

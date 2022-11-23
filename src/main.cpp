@@ -71,7 +71,7 @@ void setup() {
 
   memset(MBpacket, 0, sizeof(MBpacket));
   
-  rf_mbus_init();
+  rf_mbus_init(SPI_SCK, SPI_MISO, SPI_MOSI, SPI_SS, GDO0, GDO2);
 }
 
 
@@ -79,7 +79,7 @@ void loop() {
   ArduinoOTA.handle();
   int rssi = 0;
 
-  if (rf_mbus_task(MBpacket, rssi)) {
+  if (rf_mbus_task(MBpacket, rssi, GDO0, GDO2)) {
     esp_task_wdt_reset();
     uint8_t lenWithoutCrc = crcRemove(MBpacket, packetSize(MBpacket[0]));
     Serial.print(" T: ");
@@ -102,5 +102,5 @@ void loop() {
       }
     }
     memset(MBpacket, 0, sizeof(MBpacket));
- }
+  }
 }
